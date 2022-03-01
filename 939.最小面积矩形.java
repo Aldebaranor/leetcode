@@ -19,7 +19,9 @@ class Solution {
         Map<Integer, List<Integer>> rows = new TreeMap();
         for(int[] point:points){
             int x = point[0],y=point[1];
-            rows.computeIfAbsent(x, cols-> new ArrayList<>()).add(y);
+            List<Integer> orDefault = rows.getOrDefault(x, new ArrayList<>());
+            orDefault.add(y);
+            rows.put(x,orDefault);
         }
         int ans = Integer.MAX_VALUE;
         Map<Integer,Integer> lastx = new HashMap<>();
