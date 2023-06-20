@@ -21,7 +21,6 @@
  * }
  */
 class Solution {
-    boolean flag = true;
     public boolean isValidBST(TreeNode root) {
       return  dfs(root,Long.MIN_VALUE,Long.MAX_VALUE);
     }
